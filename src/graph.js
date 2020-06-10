@@ -7,6 +7,15 @@ const createList = details => {
   return list;
 };
 
+const updateQueue = (visited, queue, nodes) => {
+  for (let i = 0; i < nodes.length; i++) {
+    const temp = nodes[i];
+    if (!visited.includes(temp) && !queue.includes(temp)) {
+      queue.push(temp);
+    }
+  }
+};
+
 const bfs = function(pairs, source, target) {
   const list = createList(pairs);
   const queue = [];
@@ -17,11 +26,8 @@ const bfs = function(pairs, source, target) {
     const curr = queue.shift();
     if (curr === target) return true;
     visited.push(curr);
-    for (let i = 0; i < list[curr].length; i++) {
-      const temp = list[curr][i];
-      if (!visited.includes(temp) && !queue.includes(temp)) {
-        queue.push(temp);
-      }
+    if (list[curr]) {
+      updateQueue(visited, queue, list[curr]);
     }
   }
 
