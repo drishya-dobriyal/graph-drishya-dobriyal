@@ -28,7 +28,7 @@ describe('BFS', () => {
       ['c', 'a']
     ];
     const source = 'a';
-    const target = 'a';
+    const target = 'c';
     assert.isTrue(bfs(pairs, source, target));
   });
   it('should return false for two node not connected to eachOther', () => {

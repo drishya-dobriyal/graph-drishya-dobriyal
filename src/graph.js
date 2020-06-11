@@ -1,8 +1,10 @@
 const createList = details => {
   const list = {};
   details.forEach(data => {
-    if (list[data[0]]) list[data[0]].push(data[1]);
-    else list[data[0]] = [data[1]];
+    const source = data[0];
+    const target = data[1];
+    if (list[source]) list[source].push(target);
+    else list[source] = [target];
   });
   return list;
 };
@@ -28,7 +30,6 @@ const bfs = function(pairs, source, target) {
     visited.push(curr);
     updateQueue(visited, queue, list[curr]);
   }
-
   return false;
 };
 
