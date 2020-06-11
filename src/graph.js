@@ -12,9 +12,9 @@ const createList = details => {
 const updateQueue = (visited, queue, nodes) => {
   if (!nodes) return;
   for (let i = 0; i < nodes.length; i++) {
-    const temp = nodes[i];
-    if (!visited.includes(temp) && !queue.includes(temp)) {
-      queue.push(temp);
+    const node = nodes[i];
+    if (!visited.includes(node) && !queue.includes(node)) {
+      queue.push(node);
     }
   }
 };
