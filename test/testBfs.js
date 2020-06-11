@@ -1,7 +1,7 @@
 const { assert } = require('chai');
 const { bfs } = require('../src/graph');
 
-describe('BFS', function() {
+describe('BFS', () => {
   it('should return false for single node not connected to itself', () => {
     const pairs = [
       ['a', 'b'],
